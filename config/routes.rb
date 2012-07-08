@@ -1,4 +1,6 @@
 Inventory::Application.routes.draw do
+  resources :containers
+
   resources :items
 
   devise_for :users
