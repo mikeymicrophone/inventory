@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  image: MyString
+  value: 1.5
+  vintage: 2012-07-08
+  description: MyText
+
+two:
+  name: MyString
+  image: MyString
+  value: 1.5
+  vintage: 2012-07-08
+  description: MyText

@@ -1,0 +1,5 @@
+development:
+  adapter: postgresql
+  database: inventory_development
+  username: mikey
+  host: localhost
