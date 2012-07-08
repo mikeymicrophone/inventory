@@ -7,6 +7,9 @@
 # Ignore bundler config
 /.bundle
 
+/config/amazon_credentials_development.rb
+/config/database.yml
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 
