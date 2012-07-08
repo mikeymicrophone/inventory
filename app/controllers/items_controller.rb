@@ -36,6 +36,8 @@ class ItemsController < ApplicationController
   # GET /items/1/edit
   def edit
     @item = Item.find(params[:id])
+    @placement = @item.placements.last
+    @placement ||= @item.placements.build
   end
 
   # POST /items

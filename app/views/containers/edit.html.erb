@@ -3,4 +3,4 @@
 <%= render 'form' %>
 
 <%= link_to 'Show', @container %> |
-<%= link_to 'Back', containers_path %>
+<%= link_to 'Destroy', @container, method: :delete, data: { confirm: 'Are you sure?' } %>

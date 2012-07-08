@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Item:</b>
+  <%= link_to_name @placement.item %>
+</p>
+
+<p>
+  <b>Container:</b>
+  <%= link_to_name @placement.container %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= link_to_name @placement.user %>
+</p>
+
+
+<%= link_to 'Edit', edit_placement_path(@placement) %> |
+<%= link_to 'Back', placements_path %>

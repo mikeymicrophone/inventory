@@ -1,30 +1,32 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
-  <%= @item.name %>
+  <b><%= @item.name %></b>
 </p>
 
-<p>
-  <b>Image:</b>
-  <%= image_tag @item.image %>
-</p>
+<% if @item.placements.present? %>
+  currently stored in: <%= link_to_name @item.container %>
+<% else %>
+  <%= link_to 'place in a container?', edit_item_path(@item) %>
+<% end %>
 
 <p>
-  <b>Value:</b>
-  <%= @item.value %>
-</p>
-
-<p>
-  <b>Vintage:</b>
-  <%= @item.vintage %>
-</p>
-
-<p>
-  <b>Description:</b>
   <%= @item.description %>
 </p>
 
+<p>
+  <%= image_tag @item.image, :width => 400 %>
+</p>
 
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+<p>
+  <b>Approximate Value:</b>
+  <%= number_to_currency @item.value %>
+</p>
+
+<p>
+  <b>Approximate Vintage:</b>
+  <%= @item.vintage %>
+</p>
+
+
+<%= link_to 'Edit', edit_item_path(@item) %>

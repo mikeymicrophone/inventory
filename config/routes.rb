@@ -1,9 +1,13 @@
 Inventory::Application.routes.draw do
+  resources :placements
+
   resources :containers
 
   resources :items
 
   devise_for :users
+  
+  resources :users
 
   root :to => 'items#index'
   # The priority is based upon order of creation:

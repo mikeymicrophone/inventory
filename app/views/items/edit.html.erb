@@ -1,6 +1,13 @@
-<h1>Editing item</h1>
+<h1>Place/Store in Container</h1>
+<%= form_for @placement do |f| %>
+  <%= f.select :container_id, options_from_collection_for_select(Container.all, :id, :name), :include_blank => true %>
+  <%= f.submit %>
+  <%= f.hidden_field :item_id %>
+<% end %>
+
+<h1>Edit item details</h1>
 
 <%= render 'form' %>
 
 <%= link_to 'Show', @item %> |
-<%= link_to 'Back', items_path %>
+<%= link_to 'Destroy', @item, method: :delete, data: { confirm: 'Are you sure?' } %>

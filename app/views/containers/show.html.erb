@@ -1,15 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
+<h2>
   <%= @container.name %>
-</p>
+</h2>
 
 <p>
-  <b>Image:</b>
-  <%= image_tag @container.image %>
+  <%= image_tag @container.image, :width => 280 %>
 </p>
 
+<div id="placements">
+  <% @container.placements.each do |placement| %>
+    <%= div_for placement do %>
+      <%= link_to_name placement.item %>
+      <%= image_tag placement.item.image, :width => 180 %>
+    <% end %>
+  <% end %>
+</div>
 
 <%= link_to 'Edit', edit_container_path(@container) %> |
 <%= link_to 'Back', containers_path %>
