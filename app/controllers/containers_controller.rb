@@ -20,6 +20,16 @@ class ContainersController < ApplicationController
       format.json { render json: @container }
     end
   end
+  
+  def list_contents_of
+    @container = Container.find params[:id]
+    @list = List.new :name => "#{current_user.first_name}'s list of items in #{@container.name}", :user => current_user
+    @container.items.each do |item|
+      @list.items << item
+    end
+    @list.save
+    redirect_to @list
+  end
 
   # GET /containers/new
   # GET /containers/new.json

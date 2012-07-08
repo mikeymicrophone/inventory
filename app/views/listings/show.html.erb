@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Item:</b>
+  <%= @listing.item %>
+</p>
+
+<p>
+  <b>List:</b>
+  <%= @listing.list %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @listing.user %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%= @listing.position %>
+</p>
+
+
+<%= link_to 'Edit', edit_listing_path(@listing) %> |
+<%= link_to 'Back', listings_path %>

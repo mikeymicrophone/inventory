@@ -17,5 +17,7 @@
   <% end %>
 </div>
 
+
+<%= link_to 'Create list from contents', list_contents_of_container_path(@container), :method => :post %> |
 <%= link_to 'Edit', edit_container_path(@container) %> |
 <%= link_to 'Back', containers_path %>

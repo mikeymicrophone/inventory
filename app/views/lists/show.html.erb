@@ -1,0 +1,17 @@
+<p>
+  <b><%= @list.name %></b>
+</p>
+
+<p>
+  created by <%= link_to_name @list.user %>
+</p>
+
+<% @list.listings.each do |listing| %>
+  <%= div_for listing do %>
+    <%= link_to_name listing.item %>
+    <%= link_to 'x', listing, :method => :delete %>
+  <% end %>
+<% end %>
+
+
+<%= link_to 'Edit', edit_list_path(@list) %> | <%= link_to 'Destroy', @list, method: :delete, data: { confirm: 'Are you sure?' } %>

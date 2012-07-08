@@ -1,0 +1,8 @@
+<% @lists.each do |list| %>
+  <%= div_for list do %>
+    <%= link_to_name list %>
+    <%= link_to_name list.user %>
+  <% end %>
+<% end %>
+
+<%= link_to 'New List', new_list_path %>

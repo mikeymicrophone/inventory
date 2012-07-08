@@ -1,0 +1,25 @@
+<%= form_for(@listing) do |f| %>
+  <% if @listing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
+
+      <ul>
+      <% @listing.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :item_id %><br />
+    <%= f.select_field :item_id, options_from_collection_for_select(Item.all, :id, :name), :include_blank => true %>
+  </div>
+  <div class="field">
+    <%= f.label :list_id %><br />
+    <%= f.select_field :list_id, options_from_collection_for_select(List.all, :id, :name), :include_blank => true %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

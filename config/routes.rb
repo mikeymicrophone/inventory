@@ -1,11 +1,21 @@
 Inventory::Application.routes.draw do
+  resources :listings
+
+  resources :lists
+
   resources :placements
 
-  resources :containers
+  resources :containers do
+    member do
+      post 'list_contents_of'
+    end
+  end
 
   resources :items
 
-  devise_for :users
+  devise_for :users do
+    match '/logout' => 'devise/sessions#destroy', :as => :logout
+  end
   
   resources :users
 

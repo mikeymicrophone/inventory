@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120708183440) do
+ActiveRecord::Schema.define(:version => 20120708185913) do
 
   create_table "containers", :force => true do |t|
     t.string   "name"
@@ -31,6 +31,28 @@ ActiveRecord::Schema.define(:version => 20120708183440) do
     t.datetime "updated_at",  :null => false
     t.integer  "user_id"
   end
+
+  create_table "listings", :force => true do |t|
+    t.integer  "item_id"
+    t.integer  "list_id"
+    t.integer  "user_id"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "listings", ["item_id"], :name => "index_listings_on_item_id"
+  add_index "listings", ["list_id"], :name => "index_listings_on_list_id"
+  add_index "listings", ["user_id"], :name => "index_listings_on_user_id"
+
+  create_table "lists", :force => true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "lists", ["user_id"], :name => "index_lists_on_user_id"
 
   create_table "placements", :force => true do |t|
     t.integer  "item_id"
